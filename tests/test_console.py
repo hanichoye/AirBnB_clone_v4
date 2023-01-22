@@ -12,7 +12,6 @@ HBNBCommand = console.HBNBCommand
 
 class TestConsoleDocs(unittest.TestCase):
     """Class for testing documentation of the console"""
-
     def test_pep8_conformance_console(self):
         """Test that console.py conforms to PEP8."""
         pep8s = pep8.StyleGuide(quiet=True)
@@ -40,7 +39,3 @@ class TestConsoleDocs(unittest.TestCase):
                          "HBNBCommand class needs a docstring")
         self.assertTrue(len(HBNBCommand.__doc__) >= 1,
                         "HBNBCommand class needs a docstring")
-
-
-if __name__ == '__main__':
-    unittest.main()

@@ -15,6 +15,7 @@ import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
 
+# this helps incase you use a .env file
 try:
     from decouple import config as getenv
 except ImportError:

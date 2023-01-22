@@ -59,7 +59,6 @@ class TestReviewDocs(unittest.TestCase):
 
 class TestReview(unittest.TestCase):
     """Test the Review class"""
-
     def test_is_subclass(self):
         """Test if Review is a subclass of BaseModel"""
         review = Review()
@@ -122,7 +121,3 @@ class TestReview(unittest.TestCase):
         review = Review()
         string = "[Review] ({}) {}".format(review.id, review.__dict__)
         self.assertEqual(string, str(review))
-
-
-if __name__ == '__main__':
-    unittest.main()

@@ -59,7 +59,6 @@ class TestCityDocs(unittest.TestCase):
 
 class TestCity(unittest.TestCase):
     """Test the City class"""
-
     def test_is_subclass(self):
         """Test that City is a subclass of BaseModel"""
         city = City()
@@ -113,7 +112,3 @@ class TestCity(unittest.TestCase):
         city = City()
         string = "[City] ({}) {}".format(city.id, city.__dict__)
         self.assertEqual(string, str(city))
-
-
-if __name__ == '__main__':
-    unittest.main()
