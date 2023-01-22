@@ -11,10 +11,14 @@ from models.place import Place
 from models.review import Review
 from models.state import State
 from models.user import User
-from os import getenv
 import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy.orm import scoped_session, sessionmaker
+
+try:
+    from decouple import config as getenv
+except ImportError:
+    from os import getenv
 
 classes = {"Amenity": Amenity, "City": City,
            "Place": Place, "Review": Review, "State": State, "User": User}
@@ -63,6 +67,7 @@ class DBStorage:
         """delete from the current database session obj if not None"""
         if obj is not None:
             self.__session.delete(obj)
+        self.save()
 
     def reload(self):
         """reloads data from the database"""
