@@ -4,8 +4,10 @@ from api.v1.views import app_views
 from flask import Flask, make_response, jsonify
 from models import storage
 from os import getenv
+from flasgger import Swagger
 
 app = Flask('__name__')
+swagger = Swagger(app)
 
 app.register_blueprint(app_views)
 app.url_map.strict_slashes = False
