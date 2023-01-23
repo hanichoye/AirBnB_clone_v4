@@ -63,7 +63,7 @@ class FileStorage:
             pass
 
     def delete(self, obj=None):
-        """delete obj from __objects if it's inside"""
+        """delete obj from __objects if it’s inside"""
         if obj is not None:
             key = obj.__class__.__name__ + '.' + obj.id
             if key in self.__objects:
@@ -96,8 +96,8 @@ class FileStorage:
 
         if not cls:
             count = 0
-            for item in all_class:
-                count += len(models.storage.all(item).values())
+            for clas in all_class:
+                count += len(models.storage.all(clas).values())
         else:
             count = len(models.storage.all(cls).values())
 
