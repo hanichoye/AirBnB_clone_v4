@@ -7,6 +7,8 @@ from flask import abort, jsonify, make_response, request
 
 @app_views.route('/states', methods=['GET'], strict_slashes=False)
 def all_states():
+    """Comment
+    """
     all_states = storage.all(State).values()
     state_list = []
 
@@ -18,6 +20,8 @@ def all_states():
 
 @app_views.route('/states/<state_id>', methods=['GET'], strict_slashes=False)
 def get_state(state_id=None):
+    """Comment
+    """
     if state_id is None:
         abort(404)
     state = storage.get(State, state_id)  # get state object
@@ -30,6 +34,8 @@ def get_state(state_id=None):
 @app_views.route('/states/<state_id>',
                  methods=['DELETE'], strict_slashes=False)
 def delete_state(state_id=None):
+    """Comment
+    """
     if state_id is None:
         abort(404)
     state = storage.get(State, state_id)
@@ -42,6 +48,8 @@ def delete_state(state_id=None):
 
 @app_views.route('/states', methods=['POST'], strict_slashes=False)
 def create_state():
+    """Comment
+    """
     if request.get_json:
         kwargs = request.get_json()
     else:
@@ -62,6 +70,8 @@ def create_state():
 
 @app_views.route('/states/<state_id>', methods=['PUT'], strict_slashes=False)
 def update_state(state_id=None):
+    """Comment
+    """
     if request.get_json:
         kwargs = request.get_json()
     else:
